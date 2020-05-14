@@ -1,5 +1,9 @@
 version: '{build}'
 
+branches:
+  only:
+    - libpcap-1.9
+    
 clone_depth: 5
 
 matrix:
@@ -49,3 +53,4 @@ build_script:
   - cmake -DPacket_ROOT=c:\projects\libpcap\Win32\%SDK% -G"%GENERATOR%" ..
   - if NOT "%GENERATOR%"=="MinGW Makefiles" msbuild /m /nologo /p:Configuration=Release pcap.sln
   - if "%GENERATOR%"=="MinGW Makefiles" mingw32-make
+  - ls
