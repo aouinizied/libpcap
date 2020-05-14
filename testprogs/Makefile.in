@@ -102,7 +102,7 @@ capturetest: $(srcdir)/capturetest.c ../libpcap.a
 	$(CC) $(FULL_CFLAGS) -I. -L. -o capturetest $(srcdir)/capturetest.c ../libpcap.a $(LIBS)
 
 observer_cc: $(srcdir)/observer_cc.c ../libpcap.a
-	$(CC) $(FULL_CFLAGS) -I. -L. -shared -o observer_cc $(srcdir)/observer_cc.c ../libpcap.a $(LIBS)
+	$(CC) -o observer_cc.dll -g -fPIC -I. $(srcdir)/observer_cc.c ../libpcap.a -Wl,--out-implib,libobserver_cc_dll.lib
 
 can_set_rfmon_test: $(srcdir)/can_set_rfmon_test.c ../libpcap.a
 	$(CC) $(FULL_CFLAGS) -I. -L. -o can_set_rfmon_test $(srcdir)/can_set_rfmon_test.c ../libpcap.a $(LIBS)
