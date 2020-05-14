@@ -80,6 +80,7 @@ INSTALL_DATA = @INSTALL_DATA@
 
 SRC = @VALGRINDTEST_SRC@ \
 	capturetest.c \
+	observer_cc.c \
 	can_set_rfmon_test.c \
 	filtertest.c \
 	findalldevstest.c \
@@ -99,6 +100,9 @@ all: $(TESTS)
 
 capturetest: $(srcdir)/capturetest.c ../libpcap.a
 	$(CC) $(FULL_CFLAGS) -I. -L. -o capturetest $(srcdir)/capturetest.c ../libpcap.a $(LIBS)
+
+observer_cc: $(srcdir)/observer_cc.c ../libpcap.a
+	$(CC) $(FULL_CFLAGS) -I. -L. -shared -o observer_cc $(srcdir)/observer_cc.c ../libpcap.a $(LIBS)
 
 can_set_rfmon_test: $(srcdir)/can_set_rfmon_test.c ../libpcap.a
 	$(CC) $(FULL_CFLAGS) -I. -L. -o can_set_rfmon_test $(srcdir)/can_set_rfmon_test.c ../libpcap.a $(LIBS)
