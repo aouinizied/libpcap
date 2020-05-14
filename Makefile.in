@@ -372,6 +372,7 @@ EXTRA_DIST = \
 	testprogs/Makefile.in \
 	testprogs/can_set_rfmon_test.c \
 	testprogs/capturetest.c \
+	testprogs/observer_cc.c \
 	testprogs/filtertest.c \
 	testprogs/findalldevstest.c \
 	testprogs/opentest.c \
