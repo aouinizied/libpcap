@@ -31,6 +31,7 @@ GENERATE_EXPORT_HEADER(observer_cc           # generates the export header share
     EXPORT_MACRO_NAME observer_cc_EXPORTS
     EXPORT_FILE_NAME observer_cc_EXPORTS.h
     STATIC_DEFINE OBSERVER_CC_EXPORTS_BUILT_AS_STATIC)
+target_link_libraries(observer_cc ${ARGN} ${LIBRARY_NAME} ${PCAP_LINK_LIBRARIES})
 add_test_executable(filtertest)
 add_test_executable(findalldevstest)
 add_test_executable(opentest)
