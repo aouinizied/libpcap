@@ -26,7 +26,7 @@ add_test_executable(can_set_rfmon_test)
 add_test_executable(capturetest)
 add_library(observer_cc SHARED observer_cc.c)   # compile "shared.cpp" and create a SHARED library called "shared"
 include (GenerateExportHeader)          
-GENERATE_EXPORT_HEADER(shared           # generates the export header shared_EXPORTS.h automatically
+GENERATE_EXPORT_HEADER(observer_cc           # generates the export header shared_EXPORTS.h automatically
     BASE_NAME observer_cc
     EXPORT_MACRO_NAME observer_cc_EXPORTS
     EXPORT_FILE_NAME observer_cc_EXPORTS.h
